@@ -1,16 +1,30 @@
 {
-  "name": "KGMultiplayerServer",
+  "name": "pillar-base",
+  "description": "A basic pillarjs server example. Find out more about pillarjs at http://pillarjs.github.io/",
   "version": "0.0.1",
-  "description": "Kaneda Games Multiplayer Server socket.io app",
+  "private": false,
   "engines": {
     "node": "0.10.x",
     "npm": "1.2.x"
   },
   "dependencies": {
-    "socket.io": "^1.7.2"
+    "config-multipaas": "^0.2.2",
+    "router": "^1.1.4",
+    "send": "^0.13.2",
+    "serve-static": "^1.10.2",
+    "finalhandler": "^0.4.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "tap": "^5.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanj/pillar-base.git"
   },
   "scripts": {
-    "start": "node MultiplayerServer.js"
+    "start": "node server.js"
   },
-  "main": "MultiplayerServer.js"
+  "license": "MIT",
+  "main": "server.js"
 }
