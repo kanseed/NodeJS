@@ -10,6 +10,7 @@ var app      = Router()
 
 // Serve up public/ftp folder 
 app.use(serveStatic('static'))
+console.log( "eo");
 
 // Routes
 app.get("/status", function (req, res) {
@@ -19,6 +20,7 @@ app.get("/status", function (req, res) {
 })
 
 app.get("/", function (req, res) {
+	console.log( "home");
   var index = fs.readFileSync(__dirname + '/index.html')
   res.statusCode = 200
   res.setHeader('Content-Type', 'text/html; charset=utf-8')
