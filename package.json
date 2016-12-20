@@ -2,7 +2,15 @@
   "name": "KGMultiplayerServer",
   "version": "0.0.1",
   "description": "Kaneda Games Multiplayer Server socket.io app",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
   "dependencies": {
     "socket.io": "^1.7.2"
-  }
+  },
+  "scripts": {
+    "start": "node MultiplayerServer.js"
+  },
+  "main": "MultiplayerServer.js"
 }
