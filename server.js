@@ -1,3 +1,7 @@
+var app=require("espress")();
+var http=require("http").Server(app);
+var io=require("socket.io")(http)
+
 var cc       = require('config-multipaas'),
     finalhandler= require('finalhandler'),
     http     = require("http"),
@@ -8,7 +12,11 @@ var cc       = require('config-multipaas'),
 var config   = cc();
 var app      = Router()
 
-
+var port=process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip=process.env.OPENSHIFT_NODEJS_IP || 8080;
+http.listen(port, ip, function(){
+	console.log("demo start success!!!!");
+})
 
 function ClientData(Id, Name, Socket)
 {
@@ -19,8 +27,8 @@ function ClientData(Id, Name, Socket)
 }
 
 var m_ClientsData=[];
-var io=require('socket.io')(1234);
-console.log('Kaneda Games Multiplayer Server Initialized');
+//var io=require('socket.io')(1234);
+ console.log('Kaneda Games Multiplayer Server Initialized');
 
 // Serve up public/ftp folder 
 app.use(serveStatic('static'))
@@ -77,6 +85,10 @@ server.listen(config.get('PORT'), config.get('IP'), function () {
 });
 
 io.on('connection', function(socket) {
+	console.log('user connected by socket!');
+});
+
+/*io.on('connection', function(socket) {
 	
 	var m_CurrentClient;
 	
@@ -134,4 +146,4 @@ io.on('connection', function(socket) {
 			}
 		}
 	})
-});
+});*/
