@@ -25,6 +25,11 @@ console.log('Kaneda Games Multiplayer Server Initialized');
 // Serve up public/ftp folder 
 app.use(serveStatic('static'))
 
+var os=require('os');
+var networkInterfaces=os.networkInterfaces( );
+console.log("ip "+networkInterfaces);
+
+
 
 // Routes
 app.get("/status", function (req, res) {
