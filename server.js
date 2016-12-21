@@ -13,7 +13,7 @@ var fs = require('fs');
 //var app      = Router()
 
 var port=process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var ip=process.env.OPENSHIFT_NODEJS_IP || 8080;
+var ip=process.env.OPENSHIFT_NODEJS_IP;
 http.listen(port, ip, function(){
 	console.log("demo start success!!!! "+ip+" : "+port);
 })
