@@ -1,6 +1,6 @@
 var app=require("express")();
-var http=require("http").Server(app);
-var io=require("socket.io")(http)
+//var http=require("http").Server(app);
+var io=require("socket.io").listen(8080)
 
 //var cc       = require('config-multipaas');
 //var finalhandler= require('finalhandler');
@@ -12,11 +12,11 @@ var fs = require('fs');
 //var config   = cc();
 //var app      = Router()
 
-var port=process.env.OPENSHIFT_NODEJS_PORT || 8080;
+/*var port=process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip=process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 http.listen(port, ip, function(){
 	console.log("demo start success!!!! "+ip+" : "+port);
-})
+})*/
 
 /*function ClientData(Id, Name, Socket)
 {
