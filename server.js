@@ -2,15 +2,15 @@ var app=require("express")();
 var http=require("http").Server(app);
 var io=require("socket.io")(http)
 
-var cc       = require('config-multipaas'),
-    finalhandler= require('finalhandler'),
-    http     = require("http"),
-    Router       = require('router'),
-    fs = require('fs'),
-    serveStatic       = require("serve-static");
+//var cc       = require('config-multipaas');
+//var finalhandler= require('finalhandler');
+    //var http     = require("http");
+    //var Router       = require('router');
+var fs = require('fs');
+    //var serveStatic       = require("serve-static");
 
-var config   = cc();
-var app      = Router()
+//var config   = cc();
+//var app      = Router()
 
 var port=process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip=process.env.OPENSHIFT_NODEJS_IP || 8080;
@@ -18,28 +18,28 @@ http.listen(port, ip, function(){
 	console.log("demo start success!!!!");
 })
 
-function ClientData(Id, Name, Socket)
+/*function ClientData(Id, Name, Socket)
 {
     this.m_Id=Id;
     this.m_Name=Name;
 	this.m_Socket=Socket;
 	this.m_Position="0.0, 0.0, 0.0";
-}
+}*/
 
 var m_ClientsData=[];
 //var io=require('socket.io')(1234);
  console.log('Kaneda Games Multiplayer Server Initialized');
 
 // Serve up public/ftp folder 
-app.use(serveStatic('static'))
+//app.use(serveStatic('static'))
 
-var os=require('os');
+/*var os=require('os');
 var networkInterfaces=os.networkInterfaces( );
-console.log("ip "+networkInterfaces);
+console.log("ip "+networkInterfaces);*/
 
 
 
-function getServerIp() {
+/*function getServerIp() {
 
   var os = require('os');
   var ifaces = os.networkInterfaces();
@@ -53,7 +53,7 @@ function getServerIp() {
   return values.length ? values[0].address : '0.0.0.0';
 }
 
-console.log("ip address "+getServerIp());
+console.log("ip address "+getServerIp());*/
 
 console.log("end");
 
@@ -75,14 +75,14 @@ app.get("/", function (req, res) {
 })
 
 // Create server 
-var server = http.createServer(function(req, res){
+/*var server = http.createServer(function(req, res){
   var done = finalhandler(req, res)
   app(req, res, done)
 })
 
 server.listen(config.get('PORT'), config.get('IP'), function () {
   console.log( "Listening on " + config.get('IP') + ", port " + config.get('PORT') )
-});
+});*/
 
 io.on('connection', function(socket) {
 	console.log('user connected by socket!');
