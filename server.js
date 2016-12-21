@@ -15,7 +15,7 @@ var fs = require('fs');
 var port=process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip=process.env.OPENSHIFT_NODEJS_IP || 8080;
 http.listen(port, ip, function(){
-	console.log("demo start success!!!!");
+	console.log("demo start success!!!! "+ip+" : "+port);
 })
 
 /*function ClientData(Id, Name, Socket)
