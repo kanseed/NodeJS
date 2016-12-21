@@ -88,6 +88,10 @@ io.on('connection', function(socket) {
 	console.log('user connected by socket!');
 });
 
+io.configure(function(){
+    io.set("transports", ["websocket"]);
+});
+
 /*io.on('connection', function(socket) {
 	
 	var m_CurrentClient;
